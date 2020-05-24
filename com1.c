@@ -39,6 +39,8 @@ if((kill(pid,0)==-1))
 printf("enter data to send\n");
 while(1){
 scanf("%d",&c);
+ if(c==-1)
+  break;
 value.sival_int = c;
 ret = sigqueue (pid,SIGUSR2,value);
 if (ret)
